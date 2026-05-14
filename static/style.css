@@ -1,0 +1,611 @@
+/* Global Background */
+
+.home-bg {
+    background: url("/static/images/home-bg.jpg") no-repeat center center/cover;
+    min-height: 100vh;
+}
+
+/* Dark Overlay */
+
+.page-overlay {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    padding-top: 80px;
+    /* for navbar space */
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    min-height: 100vh;
+    background: none;
+}
+
+
+
+.top-bar {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 40px;
+}
+
+/* ================= LEFT & RIGHT ================= */
+.left,
+.right {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= LEFT ================= */
+.left {
+    width: 35%;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.9),
+            rgba(230, 240, 255, 0.9));
+    border-left: 5px solid #667eea;
+
+}
+
+
+/* ================= RIGHT ================= */
+.right {
+    width: 45%;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.9),
+            rgba(240, 230, 255, 0.9));
+    border-left: 5px solid #764ba2;
+}
+
+
+/* ================= CAMERA ================= */
+#video {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    display: block;
+    margin: auto;
+}
+
+/* ================= RESULT BOX ================= */
+.result-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= HEADINGS ================= */
+.result-box h3,
+.result-box h4 {
+    margin-top: 12px;
+    color: #34495e;
+}
+
+/* ================= EMOTION ================= */
+.emotion-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: #000;
+    margin: 5px 0;
+}
+
+/* ================= CONFIDENCE ================= */
+#confidence {
+    font-size: 18px;
+    color: #2980b9;
+}
+
+/* ================= TIME ================= */
+#time-bias {
+    font-size: 15px;
+    color: #555;
+}
+
+/* ================= EXPLANATION ================= */
+#why-title {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#explanation {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* ================= RECOMMENDATION ================= */
+.rec-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.rec-subtitle {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+/* ================= GRID ================= */
+.rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* ================= CARD ================= */
+.rec-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.rec-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= CARD IMAGE ================= */
+.rec-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+/* ================= CARD TITLE ================= */
+.rec-card h4 {
+    margin: 10px;
+    font-size: 15px;
+    color: #333;
+}
+
+/* ================= BUTTON ================= */
+.rec-card a {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 7px 18px;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.rec-card a:hover {
+    background: linear-gradient(to right, #217dbb, #1a5fa0);
+}
+
+.logout-btn {
+    float: right;
+    background: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+/* ================= NAVBAR ================= */
+
+/* Navbar Layout */
+
+/* NAVBAR */
+
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 40px;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    z-index: 1000;
+
+    animation: slideDown 1s ease;
+}
+
+
+/* Left links */
+.nav-left a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Right links */
+.nav-right a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Hover */
+.nav-left a::after,
+.nav-right a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0%;
+    height: 2px;
+
+    background: #ffd700;
+
+    transition: 0.3s;
+}
+
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+    width: 100%;
+}
+
+
+
+.logout {
+    background: #e74c3c;
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.logout:hover {
+    background: #c0392b;
+}
+
+/* Home Page */
+
+/* HOME BACKGROUND */
+
+
+.home-overlay {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content {
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.5s ease;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.home-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.home-btn {
+    display: inline-block;
+
+    padding: 12px 28px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* Page Box */
+
+.page-box {
+    width: 60%;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+
+/* Profile */
+
+.profile-card {
+    width: 40%;
+    margin: 50px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+/* Edit Profile Button */
+
+.edit-btn {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 8px 18px;
+
+    background: #667eea;
+    color: white;
+
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background: #4f46e5;
+}
+
+/* ================= AUTH PAGES ================= */
+
+.auth-bg {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("/static/login-bg.jpg") no-repeat center center/cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-card {
+    background: white;
+    width: 350px;
+    padding: 35px 30px;
+    border-radius: 15px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.auth-sub {
+    color: gray;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* Input Boxes */
+
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 5px;
+
+    border: none;
+    border-bottom: 2px solid #ccc;
+
+    outline: none;
+    font-size: 15px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+
+    color: gray;
+    font-size: 14px;
+
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus+label,
+.input-box input:valid+label {
+    top: -8px;
+    font-size: 12px;
+    color: #667eea;
+}
+
+/* Button */
+
+.auth-btn {
+    width: 100%;
+    padding: 10px;
+
+    background: linear-gradient(to right,
+            #667eea,
+            #764ba2);
+
+    border: none;
+    border-radius: 25px;
+
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    opacity: 0.9;
+}
+
+/* Error */
+
+.auth-error {
+    color: red;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* Links */
+
+.auth-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= LOADER ================= */
+
+.loader {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Spinner */
+
+.spinner {
+    width: 35px;
+    height: 35px;
+
+    border: 4px solid #ddd;
+    border-top: 4px solid #667eea;
+
+    border-radius: 50%;
+
+    margin: auto;
+
+    animation: spin 1s linear infinite;
+}
+
+.loader p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Animation */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Center Edit Profile Page */
+
+.edit-bg {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Edit Card */
+
+.edit-card {
+    background: rgba(255, 255, 255, 0.95);
+
+    width: 380px;
+
+    padding: 35px 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+}
